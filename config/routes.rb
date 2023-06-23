@@ -11,6 +11,14 @@ Rails.application.routes.draw do
  devise_for :admin, skip: [:registrations, :passwords], controllers: {
    sessions: "admin/sessions"
  }
-
+ 
+ namespace :admin do
+    resources :items
+ end
+ 
+ namespace :public do
+     resources :items
+ end
+ 
 end
 
