@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :items
  end
- 
+
  scope module: :public do
      resources :customers
 end
@@ -23,12 +23,32 @@ end
   scope module: :public do
     resources :deliveries
  end
-     
+
 
  namespace :admin do
     resources :deliveries
-end
-  
+ end
+
+  scope module: :public do
+    resources :orders
+ end
+
+
+ namespace :admin do
+    resources :orders
+ end
+
+ scope module: :public do
+    resources :cart_items
+ end
+
+  namespace :admin do
+    resources :orders_details
+ end
+ 
+ namespace :admin do
+    resources :genres
+ end
 
  devise_for :customers, skip: [:passwords], controllers: {
    registrations: "public/registrations",
