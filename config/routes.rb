@@ -15,11 +15,11 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
     resources :deliveries
 
-
-    #patch機能（updateとquitアクション）はどうすれば、、、
     get 'customers/my_page' => 'customers#show'
     get 'customers/edit' => 'customers#edit'
     get 'customers/confirm' => 'customers#confirm'
+    patch 'customers' => 'customers#update'
+    patch 'customers/quit' => 'customers#quit'
 
 
     delete 'cart_items/all_destroy' => 'cart_items#all_destroy'
