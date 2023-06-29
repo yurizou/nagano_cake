@@ -1,1 +1,10 @@
-<h1>顧客側商品一覧</h1>
+<h1>商品一覧</h1> 
+<P>全 件</P>
+
+<% @items.each do |item| %>
+  <tbody>
+    <tr><%= image_tag get_item_image(200,200) %></tr>
+    <tr><%= item.name %></tr>
+    <tr><%= item.price %></tr>
+  </tbody>
+<% end %>

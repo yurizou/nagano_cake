@@ -1,1 +1,12 @@
-<h1>管理者側の商品編集画面</h1>
+<h1>商品編集</h1>
+
+<div class="field">
+    <%= f.label :商品画像 %> <%= f.label :（姓） %> <%= f.file_field :image %>
+    <%= f.label :商品名 %> <%= f.text_field :name %>
+    <%= f.label :商品説明 %><%= f.text_area :introduction %>
+    <%= f.label :ジャンル %><%= %>
+    <%= f.label :税抜価格 %><%= %>
+    <%= f.label :販売ステータス %><%= %>
+  </div>
+
+<h2>変更を保存</h2>
