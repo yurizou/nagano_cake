@@ -3,15 +3,16 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :商品説明 %> <%= f.text_field :last_name %>選択されていません
-    
+<div class="field">
+    <%= f.label :名前 %>
+    <%= f.label :（セイ） %> <%= f.text_field :last_name %>
+    <%= f.label :（メイ） %> <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
     <%= f.label :フリガナ %>
-    <%= f.label :（セイ） %> <%= f.text_field :last_name %>
-    <%= f.label :（メイ） %> <%= f.text_field :first_name %>
+    <%= f.label :（セイ） %> <%= f.text_field :last_name_kana %>
+    <%= f.label :（メイ） %> <%= f.text_field :first_name_kana %>
   </div>
 
   <div class="field">

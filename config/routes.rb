@@ -1,17 +1,8 @@
 Rails.application.routes.draw do
-
-  devise_for :customers, skip: [:passwords], controllers: {
-   registrations: "public/registrations",
-   sessions: 'public/sessions'
- }
-
- devise_for :admin, skip: [:registrations, :passwords], controllers: {
-   sessions: "admin/sessions"
- }
-
-  scope module: :public do
+ 
+   scope module: :public do
     get '' => 'homes#top'
-    get 'about' => 'homes#about'
+    get 'about' => 'homes#abocut'
     resources :items, only: [:index, :show]
     resources :deliveries
 
@@ -31,6 +22,10 @@ Rails.application.routes.draw do
     get 'orders/complete' => 'orders#complete', as: 'complete'
 
     resources :genres
+    
+  
+ 
+ 
  end
 
 
@@ -41,8 +36,17 @@ Rails.application.routes.draw do
     resources :orders, only: [:show, :update]
     resources :genres, only: [:index, :edit, :create, :update]
     patch 'orders_details' => 'orders_details#update'
+    
+   
  end
-
+  devise_for :customers, skip: [:passwords], controllers: {
+   registrations: "public/registrations",
+   sessions: 'public/sessions'
+ }
+ 
+  devise_for :admin, skip: [:registrations, :passwords], controllers: {
+   sessions: "admin/sessions"
+ }
 
 end
 

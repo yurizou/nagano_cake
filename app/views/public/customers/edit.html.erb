@@ -1,0 +1,41 @@
+<h1>会員情報編集</h1>
+
+  <div class="field">
+    <%= f.label :名前 %>
+    <%= f.label :（セイ） %> <%= f.text_field :last_name %>
+    <%= f.label :（メイ） %> <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :フリガナ %>
+    <%= f.label :（セイ） %> <%= f.text_field :last_name_kana %>
+    <%= f.label :（メイ） %> <%= f.text_field :first_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :郵便番号（ハイフンなし） %>
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :住所 %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :電話番号（ハイフンなし） %>
+    <%= f.text_field :number %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :メールアドレス %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+  
+   <div class="actions">
+    <%= f.submit "編集内容を保存" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "退会する" %>
+  </div>
