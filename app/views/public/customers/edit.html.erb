@@ -1,5 +1,5 @@
 <h1>会員情報編集</h1>
-
+ <%= form_with model: @customer do |f| %>
   <div class="field">
     <%= f.label :名前 %>
     <%= f.label :（セイ） %> <%= f.text_field :last_name %>
@@ -39,3 +39,5 @@
   <div class="actions">
     <%= f.submit "退会する" %>
   </div>
+
+<% end %>
