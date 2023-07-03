@@ -11,7 +11,85 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+    <header>
+      <div class="container">
+        <% if customer_signed_in? %>
+         <div class="row">
+           <div class="col-md-4">
+         <%= link_to "ロゴ", root_path, class: "text-danger" %>
+           </div>
+           <div class="col-md-4">ようこそ、<%= current_customer.last_name %>さん!</div>
+           <div class="col-md-1">
+             <%= link_to "マイページ", customers_my_page_path, class: "Warning" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to " 商品一覧", items_path, class: "Warning" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "カート", cart_items_path, class: "Warning" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "ログアウト", root_path, class:"Warning" %>
+           </div>
+         </div>
+        <% elsif admin_signed_in? %>
+            <div class="row">
+           <div class="col-md-4">
+             <P class="warning">ロゴ</P>
+           </div>
+           <div class="col-md-4"></div>
+           <div class="col-md-1">
+             <%= link_to "商品一覧", admin_items_path, class: "Success" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "会員一覧", admin_customers_path, class: "Success" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "注文履歴一覧", admin_root_path, class:"Success" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "ログアウト", new_admin_session_path, class:"Success" %>
+           </div>
+         </div>
+
+        <% else %>
+          <div class="row">
+           <div class="col-md-4">
+             <P class="warning">ロゴ</P>
+           </div>
+           <div class="col-md-4"></div>
+           <div class="col-md-1">
+             <%= link_to "About", about_path, class: "Secondary" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "商品一覧", items_path, class: "Secondary" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "新規登録", new_customer_registration_path, class:"Secondary" %>
+           </div>
+           <div class="col-md-1">
+             <%= link_to "ログイン", new_customer_session_path, class:"Secondary" %>
+           </div>
+         </div>
+
+        <% end %>
+      </div>
+
+    </header>
     <%= yield %>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-1"></div>
+           <div class="col-1"></div>
+            <div class="col-1"></div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
+
+<%#= link_to "表示させたい文字", path, class: "" %>

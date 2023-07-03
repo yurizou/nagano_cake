@@ -1,5 +1,5 @@
+
 <h1>注文履歴一覧</h1>
-<%= form_with model: @orders do |f| %>
 <table>
   <thead>
     <tr>
@@ -11,12 +11,12 @@
   </thead>
   
 
-  <% @order.each do |order| %>
+  <% @orders.each do |order| %>
     <tbody>
       <tr>
         <th><%= order.created_at %></th> 
         <th><%= order.customer_id %></th>
-        <th><%= order. %></th>
+        <th><%= order.order_details.sum(:quantity) %></th>
         <th><%= order.status %></th>
         
       
@@ -24,7 +24,6 @@
      </tr>
     </tbody>
   </table>
-<% end %>
 
 
 
