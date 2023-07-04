@@ -1,1 +1,33 @@
-<h1>管理者側の商品一覧</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"><h1>商品一覧</h1></div>
+      <div class="col-md-9"></div>
+        <div class="col-md-1"><%= link_to "+", new_admin_item_path %></div>
+  </div>
+<table>
+  <thead>
+    <tr>
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+
+
+  <% @items.each do |item| %>
+    <tbody>
+      <tr>
+        <th><%= @item %></th>
+        <th><%= item.name %></th>
+        <th><%= item.price %></th>
+        <th><%= item.genre_id %></th>
+        <th><%= item.order_details.making_status %></th>
+
+  <% end %>
+     </tr>
+    </tbody>
+  </table>
+
+</div>
