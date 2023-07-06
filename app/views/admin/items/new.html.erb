@@ -1,7 +1,7 @@
 <h1>商品新規登録画面</h1>
 
 <div class="field">
-  <%= form_with model: @item do |f| %>
+  <%= form_with model: @item, url: admin_items_path do |f| %>
     <%= f.label :商品画像 %><%= f.file_field :image %>
     <%= f.label :商品名 %> <%= f.text_field :name, placeholder: "商品名" %>
     <%= f.label :商品説明 %><%= f.text_area :introduction, :placeholder =>"ここに説明文を記述します" %>
@@ -10,8 +10,6 @@
     <%= f.label :販売ステータス %>
     <%= f.radio_button :is_active, true %><%= f.label :is_active, '販売中', value: true %>
     <%= f.radio_button :is_active, false %><%= f.label :is_active, '販売停止中', value: false %>
-
+    <%= f.submit "新規登録" %>
   <% end %>
  </div>
-
-<%= link_to "新規登録", admin_item_path %>

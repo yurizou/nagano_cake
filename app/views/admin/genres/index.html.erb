@@ -1,1 +1,22 @@
-<h1>管理者側のジャンル機能一覧</h1>
+<h1>ジャンル一覧・追加</h1>
+<%= form_with model : @genre, url: 　 do |f| %>
+<%= f.label :ジャンル名 %><%= f.text_field :name %>
+<%= f.submit "新規登録" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ジャンル</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @genres.each do |genre| %>
+    <tr>
+      <th>genre.name</th>
+      <th><%= f.submit "編集する" %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
