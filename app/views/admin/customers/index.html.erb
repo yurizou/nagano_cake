@@ -16,7 +16,12 @@
       <th><%= @customer %></th>
       <th><%= customer.last_name + customer.first_name %></th>
       <th><%= customer.email %></th>
-      <th><%= customer.</th>
+      <th><% if customer.is_delete %>
+      <p>退会済</p>
+      <% else %>
+      <p>有効</p>
+      <% end %>
+      </th>
     </tr>
   </tbody>
 <% end %>

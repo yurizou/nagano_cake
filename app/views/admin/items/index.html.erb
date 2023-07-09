@@ -22,8 +22,9 @@
         <th><%= @item %></th>
         <th><%= item.name %></th>
         <th><%= item.price %></th>
-        <th><%= item.genre_id %></th>
-        <th><%= item.order_details.making_status %></th>
+        <th><%= item.genre.name %></th>
+        <th><%= item.is_active %></th>
+        #if文を使う
 
   <% end %>
      </tr>

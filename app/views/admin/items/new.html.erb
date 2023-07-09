@@ -15,9 +15,9 @@
    <div>
      <%= f.label :税抜価格 %><%= f.text_field :price, :placeholder => "1000" %>円
    </div>
-   <div><%#わからない%>
+   <div>
      <%= f.label :ジャンル %>
-     <%= f.collection_select :name, @genres, :id, :name, include_blank: "--選択して下さい--" %>
+     <%= f.collection_select :genre_id, @genres, :id, :name, include_blank: "--選択して下さい--" %>
      
    </div>
     
