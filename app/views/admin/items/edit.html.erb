@@ -1,12 +1,16 @@
 <h1>商品編集</h1>
 
 <div class="field">
+  <%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
     <%= f.label :商品画像 %> <%= f.label :（姓） %> <%= f.file_field :image %>
     <%= f.label :商品名 %> <%= f.text_field :name %>
     <%= f.label :商品説明 %><%= f.text_area :introduction %>
-    <%= f.label :ジャンル %><%= %>
-    <%= f.label :税抜価格 %><%= %>
-    <%= f.label :販売ステータス %><%= %>
-  </div>
+    <%= f.label :ジャンル %><%= f.collection_select :genre_id, @genres, :id, :name, include_blank: @item.genre.name %>
+    <%= f.label :税抜価格 %><%= f.text_field :price %>
+    <%= f.label :販売ステータス %>
+    <%= f.radio_button :is_active, true %><%= f.label :is_active, '販売中', value: true %>
+    <%= f.radio_button :is_active, false %><%= f.label :is_active, '販売停止中', value: false %>
+ </div>
+    <%= f.submit "変更を保存" %>
 
-<h2>変更を保存</h2>
+<% end %>

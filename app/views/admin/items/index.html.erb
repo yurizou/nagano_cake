@@ -19,12 +19,18 @@
   <% @items.each do |item| %>
     <tbody>
       <tr>
-        <th><%= @item %></th>
-        <th><%= item.name %></th>
+        <th><%= item.id %></th>
+        <th><%= link_to item.name, admin_item_path(item.id) %></th>
         <th><%= item.price %></th>
         <th><%= item.genre.name %></th>
-        <th><%= item.is_active %></th>
-        #if文を使う
+        <th>
+          <% if item.is_active %>
+          <p>販売中</p>
+          <% else %>
+        　<p>販売停止中</p>
+        </th>
+        <% end %>
+
 
   <% end %>
      </tr>
