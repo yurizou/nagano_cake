@@ -13,8 +13,14 @@
      <%= f.label :商品説明 %><%= f.text_area :introduction, :placeholder =>"ここに説明文を記述します" %>
    </div>
    <div>
-       <%= f.label :税抜価格 %><%= f.text_field :price, :placeholder => "1000" %>円
+     <%= f.label :税抜価格 %><%= f.text_field :price, :placeholder => "1000" %>円
    </div>
+   <div><%#わからない%>
+     <%= f.label :ジャンル %>
+     <%= f.collection_select :name, @genres, :id, :name, include_blank: "--選択して下さい--" %>
+     
+   </div>
+    
     
     <div>
       <%= f.label :販売ステータス %>
