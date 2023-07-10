@@ -19,7 +19,11 @@ class Public::CustomersController < ApplicationController
   end
   
   def quit
-    
+    @customer = current_customer
+    @customer.is_delete = true 
+    @customer.save
+    reset_session
+    redirect_to root_path
   end
   
    private
