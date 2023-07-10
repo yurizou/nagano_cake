@@ -1,10 +1,19 @@
-<h1>商品一覧</h1> 
+<h1>商品一覧</h1>
 <P>全 件</P>
 
+<div class="container">
 <% @items.each do |item| %>
   <tbody>
-    <tr><%= image_tag get_item_image(200,200) %></tr>
-    <tr><%= item.name %></tr>
-    <tr><%= item.price %></tr>
+   <div class="row">
+     <tr><%= image_tag item.image, size: "200x200" %></tr>
+   </div>
+   <div class="row">
+     <tr><%= item.name %></tr>
+   </div>
+   <div class="row">
+     <tr>¥<%= item.price %></tr>
+   </div>  
   </tbody>
 <% end %>
+
+ </div>
