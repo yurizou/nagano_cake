@@ -5,7 +5,11 @@
 <% @items.each do |item| %>
   <tbody>
    <div class="row">
-     <tr><%= image_tag item.image, size: "200x200" %></tr>
+     <tr>
+      <%= link_to item_path(item) do %>
+      <%= image_tag item.image, size: "200x200" %>
+      <% end %>
+      </tr>
    </div>
    <div class="row">
      <tr><%= item.name %></tr>
