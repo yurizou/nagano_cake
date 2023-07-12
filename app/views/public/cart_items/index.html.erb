@@ -17,9 +17,11 @@
       <th><%= image_tag item.image, size: "200x200" %>
       <%= item.name %>
       </th>
-      <th><%= item.price %></th>
+      <th><%= item.with_tax_price %></th>
       <th><%#=数量選択のインスタンス変数は？%> </th>
-      <th><%#=小計の計算方法は？%></th>
+      <%#=小計の計算方法は？%>
+      <th><%= item.subtotal %></th>
+      <%= @合計金額 += cart_item.subtotal %>
       <th><%= f.submit "削除する" %></th>
     </tr>
     <% end 
