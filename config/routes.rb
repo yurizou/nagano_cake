@@ -12,9 +12,10 @@ Rails.application.routes.draw do
     patch 'customers/info' => 'customers#update'
     patch 'customers/quit' => 'customers#quit'
 
-
     delete 'cart_items/all_destroy' => 'cart_items#all_destroy'
     resources :cart_items, only: [:index, :update, :destroy, :create]
+
+
 
 
     resources :orders, only: [:new, :index, :create, :show]
