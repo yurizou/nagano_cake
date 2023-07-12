@@ -8,6 +8,7 @@ class Public::OrdersController < ApplicationController
   end
   
   def new
+    @order_detail = OrderDetail.new
     
   end
   
