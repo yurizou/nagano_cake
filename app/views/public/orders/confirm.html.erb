@@ -9,27 +9,38 @@
       <th>小計</th>
     </tr>
   </thead>
-  <%= form_with model: @order_detail, url: complete_path do |f| %>
+ 
 
   <tbody>
-    <%= @order.each do |order| %>
+    <% @cart_items.each do |cart_item| %>
     <tr>
-      <th><%= image_tag @item.image, size: "100x100" %><%= @item.name %></th>
-      <th><%= @item.price %></th>
-      <th><%= @cart_item.amount %></th>
-      <th><%= @cart_item.subtotal %></th>
+      <th><%= image_tag cart_item.item.image, size: "100x100" %><%= cart_item.item.name %></th>
+      <th><%= cart_item.item.price %></th>
+      <th><%= cart_item.amount %></th>
+      <th><%= cart_item.subtotal %></th>
     </tr>
   <% end %>
    <tr>
-     <th><p>商品合計</p></th>
-     <th><p>請求合計</p><%= @total %></th>
+     <th><p>送料</p><%= @order.shipping %></th>
+     <% @cart_items.each do |cart_item| %>
+     <% @total = @total + cart_item.subtotal %>
+     <% end %>
+     <th><p>商品合計</p><%= @total %></th>
+     <th><p>請求合計</p><%= @order.shipping + @total %></th>
    </tr>
-     <h3>支払い方法</h3>
+     <h3>支払い方法</h3><%= @order.method %>
 
-     <h3>お届け先</h3>
-
+     <h3>お届け先</h3><%= @order.postal_code + @order.address + @order.name %>
+     <%= form_with model: @order, url: orders_path do |f| %>
+　　 <%= f.hidden_field :method, :value => @order.method  %>　
+　　 <%= f.hidden_field :postal_code, :value => @order.postal_code %>
+　　 <%= f.hidden_field :address, :value => @order.address %>
+　　 <%= f.hidden_field :name, :value => @order.name %>
+　　 <%= f.hidden_field :shipping, :value => @order.shipping %>
+　　 <%= f.hidden_field :payment, :value => @order.shipping + @total %>
      <%= f.submit :"注文を確定する" %>
+     <% end %>
   </tbody>
-  <% end %>
+ 
 
 </table>

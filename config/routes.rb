@@ -17,10 +17,10 @@ Rails.application.routes.draw do
 
 
 
-
+    get 'orders/complete' => 'orders#complete', as: 'complete'
     resources :orders, only: [:new, :index, :create, :show]
     post 'orders/confirm' => 'orders#confirm', as: 'confirm'
-    get 'orders/complete' => 'orders#complete', as: 'complete'
+    
 
     resources :genres
 
