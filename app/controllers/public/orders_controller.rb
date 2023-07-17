@@ -4,16 +4,16 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-
+    @orders = Order.all
   end
 
   def new
     @order = Order.new
-
+    
   end
 
   def show
-
+   
   end
 
   def confirm
