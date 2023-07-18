@@ -14,6 +14,7 @@ class Public::OrdersController < ApplicationController
 
   def show
    @order = Order.find(params[:id])
+   @neworder = Order.new
   end
 
   def confirm

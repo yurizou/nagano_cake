@@ -11,17 +11,19 @@
   </thead>
 
 
-  <% @orders.each do |order| %>
+  
     <tbody>
+     <% @orders.each do |order| %>
       <tr>
-        <th><%= order.created_at %></th>
+        <th><%= link_to admin_order_path(params[:id]) do %>
+            <%= order.created_at %>
+            <% end %>
+        </th>
         <th><%= order.customer_id %></th>
         <th><%= order.order_details.sum(:quantity) %></th>
         <th><%= order.status %></th>
-
-
-  <% end %>
      </tr>
+     <% end %>
     </tbody>
   </table>
 

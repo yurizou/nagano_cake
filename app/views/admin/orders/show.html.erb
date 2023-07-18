@@ -1,1 +1,34 @@
-<h1>管理者側注文詳細画面</h1>
+<h1>注文履歴詳細</h1>
+
+<p>購入者</p><%= @order.customer.name %>
+<p>注文日</p><%= @order.created_at %>
+<p>配送先</p><%=  %>
+<p>支払方法</p><%= %>
+<p>注文ステータス</p><%= select_making_status %>
+
+<table>
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>単価（税込）</th>
+      <th>数量</th>
+      <th>小計</th>
+      <th>制作ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.each do |order| %>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>商品合計</p>
+<p>送料</p>
+<p>請求合計</p>

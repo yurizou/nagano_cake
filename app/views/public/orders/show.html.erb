@@ -47,13 +47,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @order.each do |order| %>
     <tr>
-      <th><%= %></th>
-      <th><%= %></th>
-      <th><%= %></th>
-      <th><%= %></th>
-    </tr>
-    <% end %>
+      <th><%= @orders.created_at %></th>
+      <th><%= @orders.postal_code + @orders.address + @orders.name%></th>
+      <th><%= @orders.method %></th>
+      <th><%= @orders.status %></th>
   </tbody>
 </table>
