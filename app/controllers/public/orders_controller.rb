@@ -9,12 +9,11 @@ class Public::OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    
   end
 
   def show
    @order = Order.find(params[:id])
-   @neworder = Order.new
+   @order_details = @order.order_details
   end
 
   def confirm

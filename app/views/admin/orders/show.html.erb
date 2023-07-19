@@ -1,10 +1,15 @@
 <h1>注文履歴詳細</h1>
 
-<p>購入者</p><%= @order.customer.name %>
+<p>購入者</p><%= @order.customer.last_name + @order.customer.first_name %>
 <p>注文日</p><%= @order.created_at %>
-<p>配送先</p><%=  %>
-<p>支払方法</p><%= %>
-<p>注文ステータス</p><%= select_making_status %>
+<p>配送先</p><%= @order.customer.postal_code + @order.customer.address + @order.customer.last_name + @order.customer.first_name %>
+<p>支払方法</p><%= @order.method %>
+<p>注文ステータス</p>
+<%= form_with model: @order, url: admin_orders_details_path(admin_orders.id), method: :patch do |f| %>
+<p>注文ステータス</p>
+<%= f.sellect :status, *[1..4], :value => order.status %>
+<%= f.submit "更新" %>
+<% end %>
 
 <table>
   <thead>

@@ -15,7 +15,7 @@
     <tbody>
      <% @orders.each do |order| %>
       <tr><%#= リンクへ遷移できない%>
-        <th><%= link_to admin_order_path(params[:id]) do %>
+        <th><%= link_to admin_order_path(order.id) do %>
             <%= order.created_at %>
             <% end %>
         </th><%#=ID表記になってしまう%>

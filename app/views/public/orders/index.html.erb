@@ -14,11 +14,15 @@
   <tbody>
     <% @orders.each do |order| %>
     <tr>
-      <th><%= orders.created_at %></th>
-      <th><%= orders.postal_code + orders.address + orders.name %></th>
-      <th><%= orders.cart_item.item.name %></th>
-      <th><%= orders.payment %></th>
-      <th><%= orders.status %></th>
+      <th><%= order.created_at %></th>
+      <th><%= order.postal_code + order.address + order.name %></th>
+      <th>
+        <% order.order_details.each do |order_detail| %>
+        <%= order_detail.item.name %>
+        <% end %>
+      </th>
+      <th><%= order.payment %></th>
+      <th><%= order.status %></th>
       <th><%= link_to "表示する", order_path(order.id) %></th>
     </tr>
     <% end %>
