@@ -22,13 +22,16 @@
     </tr>
   </thead>
   <tbody>
-    <% @order.each do |order| %>
+    <% @order.order_details.each do |order_detail| %>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><%= order_detail.item.name %></th>
+      <th><%= order_detail.price %></th>
+      <th><%= order_detail.quantity %></th>
+      <th><%= order_detail.price * order_detail.quantity %></th>
+      <th><%= form eith model: @order_detail, url: admin_orders_details_path(order.id), method: :patch do |f| %>
+          <%= <%= f.select :making_status, *[     %>
+          <% end %>
+      </th>
     </tr>
     <% end %>
   </tbody>
