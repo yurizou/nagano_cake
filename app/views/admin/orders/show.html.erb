@@ -28,8 +28,8 @@
       <th><%= order_detail.price %></th>
       <th><%= order_detail.quantity %></th>
       <th><%= order_detail.price * order_detail.quantity %></th>
-      <th><%= form eith model: @order_detail, url: admin_orders_details_path(order.id), method: :patch do |f| %>
-          <%= <%= f.select :making_status, *[     %>
+      <th><%= form eith model: @order_detail, urlcd: admin_orders_details_path(order.id), method: :patch do |f| %>
+          <%= <%= f.select :making_status, *[  ]   %>
           <% end %>
       </th>
     </tr>
