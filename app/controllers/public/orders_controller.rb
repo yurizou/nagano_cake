@@ -35,7 +35,7 @@ class Public::OrdersController < ApplicationController
     order_detail = OrderDetail.new(order_id:@order.id)
     order_detail.item_id = cart_item.item.id
     order_detail.quantity = cart_item.amount
-    order_detail.price = cart_item.item.price
+    order_detail.price = cart_item.item.price * 1.1
     order_detail.save
     end
     #カートを消す作業

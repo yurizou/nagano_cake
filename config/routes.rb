@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get 'orders/complete' => 'orders#complete', as: 'complete'
     resources :orders, only: [:new, :index, :create, :show]
     post 'orders/confirm' => 'orders#confirm', as: 'confirm'
-    
+
 
     resources :genres
 
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :genres, only: [:index, :edit, :create, :update]
-    patch 'orders_details' => 'orders_details#update'
+    patch 'orders_details/:id' => 'orders_details#update'
 
 
  end
