@@ -1,16 +1,46 @@
-<h1>商品編集</h1>
-
 <div class="field">
-  <%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
-    <%= f.label :商品画像 %> <%= f.label :（姓） %> <%= f.file_field :image %>
-    <%= f.label :商品名 %> <%= f.text_field :name %>
-    <%= f.label :商品説明 %><%= f.text_area :introduction %>
-    <%= f.label :ジャンル %><%= f.collection_select :genre_id, @genres, :id, :name, include_blank: @item.genre.name %>
-    <%= f.label :税抜価格 %><%= f.text_field :price %>
-    <%= f.label :販売ステータス %>
-    <%= f.radio_button :is_active, true %><%= f.label :is_active, '販売中', value: true %>
-    <%= f.radio_button :is_active, false %><%= f.label :is_active, '販売停止中', value: false %>
- </div>
-    <%= f.submit "変更を保存" %>
+<div class="row">
+  <div class="col-2"></div>
+  <h1 class="border text-dark">商品編集</h1>
+</div
+  <div class="container d-flex justify-content-center">
+   <%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
+   <div class="row-md-8">
+      <%= f.label :商品画像 %> <%= f.label :（姓） %> <%= f.file_field :image %>
+   </div>
+    <div class="row-md-8">
+      <%= f.label :商品名 %> <%= f.text_field :name %>
+   </div>
+   
+    <div class="row-md-8">
+      <%= f.label :商品説明 %><%= f.text_area :introduction %>
+    </div>
+    
+     <div class="row-md-8">
+      <%= f.label :ジャンル %><%= f.collection_select :genre_id, @genres, :id, :name, include_blank: @item.genre.name %>
+     </div>
+     <div class="row-md-8">
+      <%= f.label :ジャンル %>
+      <%= f.collection_select :genre_id, @genres, :id, :name, include_blank: "--選択して下さい--" %>
+     </div>
+     
+     <div class="row-md-8">
+       <%= f.label :税抜価格 %><%= f.text_field :price %>
+     </div>
+    
+     
+     <div class="row-md-8">
+      <%= f.label :販売ステータス %>
+      <%= f.radio_button :is_active, true %><%= f.label :is_active, '販売中', value: true %>
+      <%= f.radio_button :is_active, false %><%= f.label :is_active, '販売停止中', value: false %>
+     </div>
+    
+    <div class="row-md-5">
+     <div class="col-4 center-block text-light">
+      <button type="submit" class="btn btn-success">変更を保存</button>
+    </div>
+    </div>
 
 <% end %>
+
+ </div>
