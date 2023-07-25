@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="row center-block mt-4 p-3 mb-2 bg-info text-white">
-    <div class="col-2"></div>
-    <div class="col-8">
+  <div class="row center-block mt-4 p-3 mb-2 bg-info text-white" style="height: 300px">
+    <img src="sample.png" class="img-fluid" alt="">
+    <div class="col-4"></div>
+    <div class="col-6" style="padding-top: 80px">
       <p>ようこそ、ながのCAKEへ！<br>
         このサイトは、ケーキ販売のECサイトになります。<br>
         会員でない方も商品の閲覧はできますが、<br>
@@ -10,21 +11,22 @@
     <div class="col-2"></div>
   </div>
   <div class="row">
-    <h1 class="col-3 border border-text">新着商品</h1>
+    <h1 class="col-2.8 border border-text">新着商品</h1>
   </div>
   <div class="row">
-      <div class="col-3">
+      
         <% @items.each do |item| %>
+        <div class="w-25">
         <%= link_to item_path(item) do %>
         <%= image_tag item.image, size: '200x200' %>
         <% end %>
-      </div>
+        <p><%= item.name %></p>
+        <p>¥<%= item.price %></p>
+        </div>
+        <% end %>
+      
     </div>
-   </div>
   </div>
-
-
-</div>
 
 
 
@@ -34,6 +36,4 @@
 
 
 
-<%= item.name %>
-¥<%= item.price %>
-<% end %>
+

@@ -1,8 +1,12 @@
-<h2>マイページ</h2>
-
-<h3>登録情報</h3><%= link_to "編集する", customers_edit_path %>
-
-<table>
+<div class="container">
+  <div class="row my-4">
+      <h2 class="col-2 border border-text">マイページ</h2>
+  </div>
+  <div class="row">
+      <div class="col-3 font-weight-bold" style="font-size: 20px">登録情報</div>
+      <div class="col-3"><%= link_to "編集する", customers_edit_path, class: "btn btn-success" %></div>
+  </div>
+  <table class="table">
   <tbody>
     <tr>
       <th>氏名</th>
@@ -30,7 +34,19 @@
     </tr>
   </tbody>
 </table>
+   <div class="row my-4">
+      <div class="col-3 font-weight-bold" style="font-size: 20px">配送先</div>
+      <div class="col-3"><%= link_to "一覧を見る", deliveries_path, class: "btn btn-primary" %></div>
+  </div>
+   <div class="row my-4">
+      <div class="col-3 font-weight-bold" style="font-size: 20px">注文履歴</div>
+      <div class="col-3"><%= link_to "一覧を見る", orders_path, class: "btn btn-primary" %></div>
+  </div>
+</div>
 
-<h3>配送先</h3><%= link_to "一覧を見る", deliveries_path %>
 
-<h3>注文履歴</h3><%= link_to "一覧を見る", orders_path %>
+
+
+
+
+
