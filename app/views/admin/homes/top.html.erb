@@ -1,6 +1,6 @@
-
-<h1>注文履歴一覧</h1>
-<table>
+<div class="container">
+<h1 class="col-3 border text-dark">注文履歴一覧</h1>
+<table class="table">
   <thead>
     <tr>
       <th>購入日時</th>
@@ -11,7 +11,7 @@
   </thead>
 
 
-  
+
     <tbody>
      <% @orders.each do |order| %>
       <tr><%#= リンクへ遷移できない%>
@@ -21,11 +21,10 @@
         </th><%#=ID表記になってしまう%>
         <th><%= order.customer_id %></th>
         <th><%= order.order_details.sum(:quantity) %></th>
-        <th><%= order.status %></th>
+        <th><%= order.status_i18n %></th>
      </tr>
      <% end %>
     </tbody>
   </table>
-
-
+</div>
 

@@ -1,16 +1,39 @@
-<p>ようこそ、ながのCAKEへ！<br>
-このサイトは、ケーキ販売のECサイトになります。<br>
-会員でない方も商品の閲覧はできますが、<br>
-購入には会員登録が必要になります。</p>
+<div class="container">
+  <div class="row center-block mt-4 p-3 mb-2 bg-info text-white">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <p>ようこそ、ながのCAKEへ！<br>
+        このサイトは、ケーキ販売のECサイトになります。<br>
+        会員でない方も商品の閲覧はできますが、<br>
+        購入には会員登録が必要になります。</p>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <h1 class="col-3 border border-text">新着商品</h1>
+  </div>
+  <div class="row">
+      <div class="col-3">
+        <% @items.each do |item| %>
+        <%= link_to item_path(item) do %>
+        <%= image_tag item.image, size: '200x200' %>
+        <% end %>
+      </div>
+    </div>
+   </div>
+  </div>
 
 
-<h1>新着商品</h1>
+</div>
+
+
+
+
+
 <%#上から４番だけ表示させたい %>
-<% @items.each do |item| %>
 
-<%= link_to item_path(item) do %>
-<%= image_tag item.image, size: '200x200' %>
-<% end %>
+
+
 <%= item.name %>
 ¥<%= item.price %>
 <% end %>
