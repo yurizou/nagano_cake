@@ -1,21 +1,24 @@
-<h2>ログイン</h2>
-<h3>会員の方はこちらからログイン</h3>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :メールアドレス %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
+<div class="container">
+  <h3 class="col-2 border border-text">ログイン</h3>
+  <p class="col-3 border border-text">会員の方はこちらからログイン</p>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row my-4">
+    <div class="col-3"><%= f.label :メールアドレス %></div>
+    <div class="col-4"><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com" %></div>
   </div>
   
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="row my-4">
+    <div class="col-3"><%= f.label :パスワード %></div>
+    <div class="col-4"> <%= f.password_field :password, autocomplete: "current-password" %></div>
   </div>
- 
-  <h3>会員登録がお済みでない方</h3>
-　　<%= link_to "こちら", new_customer_registration_path %>から新規登録を行なってください。
-<% end %>
+  
+  <div class="row my-3">
+    <div class="col-3"></div>
+    <div class="col-4 center-block text-light">
+       <button type="submit" class="btn btn-primary">ログイン</button>
+    </div>
+  </div>
+  <p class="col-3 border border-text">会員登録がお済みでない方</p>
+  　<p>　<%= link_to "こちら", new_customer_registration_path %>から新規登録を行なってください。</p>
+  　<% end %>
+</div>

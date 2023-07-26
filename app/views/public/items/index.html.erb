@@ -1,23 +1,16 @@
-<h1>商品一覧</h1>
-<P>全 件</P>
-
 <div class="container">
-<% @items.each do |item| %>
-  <tbody>
-   <div class="row">
-     <tr>
+  <div class="row my-3">
+   <h2 class="col-2 font-weight-bold">商品一覧 (全 件)</h2>
+  </div>
+  <div class="row my-4">
+    <% @items.each do |item| %>
+    <div class="w-25">
       <%= link_to item_path(item) do %>
       <%= image_tag item.image, size: "200x200" %>
       <% end %>
-      </tr>
-   </div>
-   <div class="row">
-     <tr><%= item.name %></tr>
-   </div>
-   <div class="row">
-     <tr>¥<%= item.price %></tr>
-   </div>
-  </tbody>
-<% end %>
-
+      <p><%= item.name %></p>
+      <p>¥<%= item.price %></p>
+    </div>
+   <% end %>
+  </div>
  </div>
