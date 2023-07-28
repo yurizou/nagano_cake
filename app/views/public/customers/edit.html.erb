@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="col-3 border border-text">会員情報編集</h1>
+   <%= form_with model: @customer,url: customers_info_path do |f| %>
   <div class="row my-3">
-    <%= form_with model: @customer,url: customers_info_path do |f| %>
     <div class="col-3"> <%= f.label :氏名 %></div>
     <div class="col-3"><%= f.text_field :last_name %></div>
     <div class="col-3"><%= f.text_field :first_name %></div>
@@ -34,7 +34,7 @@
        <button type="submit" class="btn btn-success">編集内容を保存</button>
     </div>
     <div class="col-2"><%= link_to "退会する", customers_confirm_path, class: "btn btn-danger" %></div>
-    <% end %>s
+    <% end %>
   </div>
   
 </div>

@@ -2,7 +2,7 @@
  <h2 class="col-3 border border-text">注文情報確認</h2>
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-7">
         <table class="table">
           <thead>
             <tr>
@@ -22,7 +22,7 @@
             </tr>
           <% end %>
      </div>
-    <div class="col-4">
+    <div class="col-5">
        <tr>
      <th><p>送料</p><%= @order.shipping %></th>
      <% @cart_items.each do |cart_item| %>
@@ -50,7 +50,7 @@
         　　 <%= f.hidden_field :shipping, :value => @order.shipping %>
         　　 <%= f.hidden_field :payment, :value => @total %>
        </div>
-        <div class="col-2 center-block text-light">
+        <div class="col-4 center-block text-light">
            <button type="submit" class="btn btn-success">注文を確定する</button>
             <% end %>
         </div>
