@@ -22,11 +22,12 @@
       　<p class="text-secondary">退会</p>
       　<% else %>
       　<p class="text-success">有効</p>
-      　<% end %>s
+      　<% end %>
       </th>
     </tr>
   </tbody>
 <% end %>
 
 </table>
+<%= paginate @customers %>
 </div>

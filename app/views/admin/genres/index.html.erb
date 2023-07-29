@@ -5,9 +5,9 @@
         <h2 class="border border-text">ジャンル一覧・追加</h2>
       </div>
     </div>
-   
+
     <div class="row my-4">
-     
+
       <div class="col-2">
         <%= form_with model: @genre, url: admin_genres_path do |f| %>
         <%= f.label :ジャンル名 %>
@@ -16,7 +16,7 @@
         <%= f.text_field :name %>
       </div>
         <div class="col-2 center-block text-light">
-        <button type="submit" class="btn btn-success">新規登録</button>
+        <%= f.submit "新規登録", class: "btn btn-success" %>
         </div>
         <% end %>
     </div>

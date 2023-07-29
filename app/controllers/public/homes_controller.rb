@@ -1,6 +1,6 @@
 class Public::HomesController < ApplicationController
   def top
-     @items = Item.all.order(created_at: :desc).first(4)
+     @items = Item.page(params[:page])
   end
 
   def about
