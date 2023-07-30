@@ -16,7 +16,7 @@
     <% @orders.each do |order| %>
     <tr>
       <th><%= order.created_at %></th>
-      <!--きれいに折り返したい（郵便番号後ろ）-->
+     
       <th style="word-wrap: break-word"><%= order.postal_code + order.address + order.name %></th>
       <th>
         <% order.order_details.each do |order_detail| %>
