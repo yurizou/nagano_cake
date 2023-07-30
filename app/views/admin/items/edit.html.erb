@@ -12,17 +12,17 @@
       <div class="col-3">
        <%= f.file_field :image %>
       </div>
-      
+
    </div>
     <div class="row my-3">
      <div class="col-3">
-      <%= f.label :商品名 %> 
+      <%= f.label :商品名 %>
      </div>
      <div class="col-3">
        <%= f.text_field :name %>
      </div>
     </div>
-   
+
     <div class="row my-3">
      <div class="col-3">
        <%= f.label :商品説明 %>
@@ -31,7 +31,7 @@
       <%= f.text_area :introduction %>
      </div>
     </div>
-    
+
      <div class="row my-3">
       <div class="col-3">
        <%= f.label :ジャンル %>
@@ -40,7 +40,7 @@
         <%= f.collection_select :genre_id, @genres, :id, :name, include_blank: "--選択して下さい--" %>
       </div>
     </div>
-     
+
      <div class="row my-3">
       <div class="col-3">
        <%= f.label :税抜価格 %>
@@ -50,8 +50,8 @@
        <p><%= f.text_field :price %>円</p>
       </div>
      </div>
-    
-     
+
+
      <div class="row my-3">
       <div class="col-4">
        <%= f.label :販売ステータス %>
@@ -61,7 +61,7 @@
        <%= f.radio_button :is_active, false %><%= f.label :is_active, '販売停止中', value: false %>
       </div>
      </div>
-    
+
     <div class="row my-3">
      <div class="col-4 center-block text-light">
       <%= f.submit "変更を保存", class: "btn btn-success" %>
