@@ -13,14 +13,14 @@
   <!--</ul>-->
 
   <div class="container d-flex justify-content-center">
-   
+
   <%= form_with model: @item, url: admin_items_path do |f| %>
    <div class="row-md-8">
     <%= f.label :商品画像 %><%= f.file_field :image %>
    </div>
    <div class="row-md-8">
      <%= f.label :商品名 %> <%= f.text_field :name, placeholder: "商品名" %>
-   </div>   
+   </div>
    <div class="row-md-8">
      <%= f.label :商品説明 %><%= f.text_area :introduction, :placeholder =>"ここに説明文を記述します" %>
    </div>
@@ -30,10 +30,10 @@
    <div class="row-md-8">
      <%= f.label :ジャンル %>
      <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %>
-     
+
    </div>
-    
-    
+
+
     <div class="row-md-5">
       <%= f.label :販売ステータス %>
       <%= f.radio_button :is_active, true %><%= f.label :is_active, '販売中', value: true %>
@@ -41,12 +41,12 @@
     </div>
     <div class="row-md-5">
      <div class="col-4 center-block text-light">
-      <button type="submit" class="btn btn-success">新規登録</button>
+      <%= f.submit "新規登録", class: "btn btn-success" %>
     </div>
     </div>
-   
+
   <% end %>
-  
-  
+
+
  </div>
 </div>

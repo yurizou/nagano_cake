@@ -25,9 +25,9 @@
       </th>
       <th><%= cart_item.item.with_tax_price %></th>
       <%= form_with model: cart_item, url: cart_item_path(cart_item.id), method: :patch do |f| %>
-      <th><%#hidden_fieldは%>
+      <th>
         <%= f.select :amount, *[1..10], :value => cart_item.amount %>
-        <button type="submit" class="btn btn-success">変更</button>
+        <%= f.submit "変更", class: "btn btn-success" %>>
       </th>
       <% end %>
       <th><%= cart_item.subtotal %></th>

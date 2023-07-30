@@ -51,7 +51,7 @@
         　　 <%= f.hidden_field :payment, :value => @total %>
        </div>
         <div class="col-4 center-block text-light">
-           <button type="submit" class="btn btn-success">注文を確定する</button>
+           <%= f.submit "注文を確定する", class: "btn btn-success" %>
             <% end %>
         </div>
          </tbody>

@@ -14,12 +14,13 @@
 
     <tbody>
      <% @orders.each do |order| %>
-      <tr><%#= リンクへ遷移できない%>
+      <tr>
         <th><%= link_to admin_order_path(order.id) do %>
             <%= order.created_at %>
             <% end %>
-        </th><%#=ID表記になってしまう%>
-        <th><%= order.customer_id %></th>
+        </th>
+
+        <th><%= order.customer.last_name + order.customer.first_name %></th>
         <th><%= order.order_details.sum(:quantity) %></th>
         <th><%= order.status_i18n %></th>
      </tr>

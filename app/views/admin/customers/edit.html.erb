@@ -4,7 +4,7 @@
             <h3><%= @customer.last_name + @customer.first_name %>さんの会員情報編集</h3>
         </div>
     </div>
-    
+
     <div class="row my-3">
         <div class="col-3">
              <p>会員ID</p>
@@ -57,7 +57,7 @@
            <%= f.label :電話番号 %>
         </div>
         <div class="col-3">
-           <%= f.text_field :number %> 
+           <%= f.text_field :number %>
         </div>
     </div>
     <div class="row my-3">
@@ -79,23 +79,23 @@
     </div>
     <div class="row">
       <div class="col-4 center-block text-light">
-      <button type="submit" class="btn btn-success">変更を保存</button>
+      <%= f.submit "変更を保存", class: "btn btn-success" %>
       </div>
        <% end %>
     </div>
-    
+
 </div>
 
 
 
- 
 
 
 
 
 
 
- 
- 
- 
- 
+
+
+
+
+
